@@ -13,12 +13,12 @@ on:
 
 env:
   # Path to the solution file relative to the root of the project.
-  SOLUTION_FILE_PATH: .
+  SOLUTION_FILE_PATH: https://github.com/hcagirgan/memreduct/tree/659b482a895ff6a3f919b75aba59d4b24cdce677/src
 
   # Configuration type to build.
   # You can convert this to a build matrix if you need coverage of multiple configuration types.
   # https://docs.github.com/actions/learn-github-actions/managing-complex-workflows#using-a-build-matrix
-  BUILD_CONFIGURATION: https://github.com/hcagirgan/memreduct/blob/659b482a895ff6a3f919b75aba59d4b24cdce677/src/res/manifest.xml
+  BUILD_CONFIGURATION: https://github.com/hcagirgan/memreduct/blob/659b482a895ff6a3f919b75aba59d4b24cdce677/src/main.c
 
 permissions:
   contents: read
@@ -32,10 +32,6 @@ jobs:
 
     - name: Add MSBuild to PATH
       uses: microsoft/setup-msbuild@v1.0.2
-
-    - name: Restore NuGet packages
-      working-directory: ${{env.GITHUB_WORKSPACE}}
-      run: nuget restore ${{env.SOLUTION_FILE_PATH}}
 
     - name: Build
       working-directory: ${{env.GITHUB_WORKSPACE}}
