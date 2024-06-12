@@ -18,7 +18,7 @@ env:
   # Configuration type to build.
   # You can convert this to a build matrix if you need coverage of multiple configuration types.
   # https://docs.github.com/actions/learn-github-actions/managing-complex-workflows#using-a-build-matrix
-  BUILD_CONFIGURATION: memreduct.sln
+  BUILD_CONFIGURATION: https://github.com/hcagirgan/memreduct/blob/659b482a895ff6a3f919b75aba59d4b24cdce677/memreduct.sln
 
 permissions:
   contents: read
